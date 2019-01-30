@@ -1,0 +1,30 @@
+import turtle
+
+class circuito():
+    corredores = []
+    __posStartY = (-30, -10, 10, 30)
+    __colorTurtle = ("red", "blue", "green","orange")
+    
+    def __init__(self,width,height):
+        #privado
+        self.__screen = turtle.Screen()
+        self.__screen.setup(width,height)
+        self.__screen.bgcolor("lightgray")
+        self.__starLine = -width/2 + 20
+        self.__finishLine = width/2 - 20
+        
+        self.__createRunners()
+        
+        def __createRunners(self):
+            for i in range(4):
+                new_turtle = turtle.Turtle()
+                new_turtle.color(self.__colorTurtle[i])
+                new_turtle.shape("turtle")
+                new_turtle.penup()
+                new_turtle.setpos(self.__starLine, self.posStartY[i])
+                
+                self.corredores.append(new_turtle)
+            
+            
+if __name__ == "__main__":
+    circuito = circuito(640,480)
